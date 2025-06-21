@@ -1,13 +1,13 @@
 .about {
   width: 100%;
-  height: 90vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 .aboutTop {
   width: 100%;
-  height: 45%;
+  height: 45vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,21 +17,49 @@
 .aboutBottom {
   display: flex;
   flex-direction: column;
-  height: 55%;
   align-items: center;
-  margin-top: 50px;
+  padding: 60px 20px 40px;
+  background-color: #f9f9f9;
 }
 
 .aboutBottom p {
-  width: 1200px;
+  max-width: 800px;
+  width: 100%;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #333;
+  text-align: justify;
 }
 
 .about .aboutBottom h1 {
-  font-weight: 400;
-  font-size: 70px;
-  color: black;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  transform: translateY(-40px);
+  font-weight: 600;
+  font-size: 48px;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.about .aboutBottom h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #ff5722;
+}
+
+@media (max-width: 900px) {
+  .aboutBottom p {
+    max-width: 95%;
+    padding: 0 15px;
+  }
+
+  .about .aboutBottom h1 {
+    font-size: 36px;
+  }
 }
