@@ -1,21 +1,113 @@
 .footer {
   width: 100%;
-  height: 200px;
   background-color: #121619;
+  color: #fff;
+  padding: 40px 20px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-content {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1 1 50%;
+  margin-bottom: 30px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #f8b400;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.footer-section h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 50px;
+  background-color: #f8b400;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #f8b400;
+  padding-left: 5px;
+}
+
+.socialMedia {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
 }
 
 .socialMedia svg {
-  color: white;
-  margin: 20px;
-  font-size: 70px;
-  cursor: pointer;
+  color: #ccc;
+  font-size: 45px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.footer p {
-  color: white;
+.socialMedia a:hover svg {
+  color: #f8b400;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  color: #aaa;
+  font-size: 14px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    text-align: center;
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .footer-section h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .socialMedia {
+    justify-content: center;
+  }
 }
