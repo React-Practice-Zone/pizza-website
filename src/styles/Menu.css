@@ -17,6 +17,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   place-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
 /* MENU ITEM STYLING */
@@ -24,12 +26,18 @@
 .menuItem {
   border-radius: 15px;
   width: 300px;
-  height: 350px;
+  height: 360px;
   margin: 20px;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  background-color: white;
 }
 .menuItem:hover {
-  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
   transition: 0.3s ease-in;
   cursor: pointer;
 }
@@ -38,25 +46,58 @@
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   width: 100%;
-  height: 200px;
+  height: 180px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  flex-shrink: 0;
 }
 
-.menuItem h1,
+.menuItem h1 {
+  margin: 12px 15px 5px;
+  font-size: 20px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .menuItem p {
-  margin-left: 20px;
+  margin: 0 15px 10px;
+  font-size: 14px;
+  color: #555;
+  flex-grow: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.menuItem h3 {
+  margin: 5px 15px 15px;
+  font-size: 18px;
+  color: #e2574c;
+  align-self: flex-end;
 }
 
 @media only screen and (max-width: 1300px) {
   .menuList {
     grid-template-columns: 1fr 1fr;
+    width: 90vw;
   }
 }
 
 @media only screen and (max-width: 800px) {
   .menuList {
     grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 310px;
+    place-items: center;
+  }
+
+  .menuItem {
+    width: 100%;
+    margin: 20px 0;
   }
 }
